@@ -8,6 +8,7 @@ enum Emocion : uint8_t {
   TRISTE,
   HAMBRE,
   DORMIDO,
+  DORMIDO_PROFUNDO,  // pantalla de reposo
   EMOCION_COUNT
 };
 
@@ -18,6 +19,7 @@ inline const char* nombreEmocion(Emocion e) {
     case TRISTE: return "TRISTE";
     case HAMBRE: return "HAMBRE";
     case DORMIDO: return "DORMIDO";
+    case DORMIDO_PROFUNDO: return "REPOSO";
     default: return "?";
   }
 }

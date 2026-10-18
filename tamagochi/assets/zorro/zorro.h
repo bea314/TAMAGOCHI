@@ -7,6 +7,7 @@
 #include "triste.h"
 #include "hambre.h"
 #include "dormido.h"
+#include "dormido_profundo.h"
 
 inline const Animacion& animacionZorro(Emocion e) {
   switch (e) {
@@ -14,6 +15,7 @@ inline const Animacion& animacionZorro(Emocion e) {
     case TRISTE: return ZORRO_TRISTE;
     case HAMBRE: return ZORRO_HAMBRE;
     case DORMIDO: return ZORRO_DORMIDO;
+    case DORMIDO_PROFUNDO: return ZORRO_DORMIDO_PROFUNDO;
     case IDLE:
     default: return ZORRO_IDLE;
   }
