@@ -15,13 +15,11 @@ TAMAGOCHI/
 ├── old/                    # Pruebas iniciales (texto, parpadeo, pixel art)
 ├── art/zorro/              # PNG fuente (no se compila)
 ├── tools/png2h.py          # PNG → headers C (opcional)
-└── tamagochi/              # Sketch Arduino
+└── tamagochi/              # Sketch Arduino (todo en raíz del sketch = compila en IDE)
     ├── tamagochi.ino
-    ├── config.h            # Pines ESP8266 / ESP32, constantes e-paper
-    └── src/
-        ├── hal/Pantalla.*   # GxEPD2, parcial / full refresh
-        ├── core/            # Emocion, Animacion, Mascota
-        └── assets/zorro/    # idle.h, feliz.h, … + zorro.h (tabla)
+    ├── config.h            # Pines, demo sin botones
+    ├── Pantalla.* / Mascota.* / Emocion.h / Animacion.h
+    └── assets/zorro/       # idle.h, feliz.h, … + zorro.h (tabla)
 ```
 
 ## Cómo correr
@@ -29,7 +27,7 @@ TAMAGOCHI/
 1. Instalar en Arduino IDE: **GxEPD2**, **Adafruit GFX**, **Adafruit BusIO**.
 2. Abrir la carpeta **`tamagochi/`** (sketch `tamagochi.ino`).
 3. Placa: **ESP8266** (o la que uses). Ajustar **`config.h`** si cambias pines o pasas a ESP32.
-4. Subir. En `setup`, prueba emociones: `mascota.setEmocion(FELIZ);` etc.
+4. Subir. Por defecto **`DEMO_CICLO_EMOCIONES`** en `config.h` rota emociones cada 5 s (sin botones). Para fijar una: `DEMO_CICLO_EMOCIONES 0` + `EMOCION_INICIAL`.
 
 **Pruebas viejas:** abrir y flashear los `.ino` dentro de `old/` (mismo display y pines que en esos sketches).
 
